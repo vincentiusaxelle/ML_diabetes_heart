@@ -3,9 +3,13 @@ import pickle
 import numpy as np
 import pandas as pd
 
-diabetes_model = pickle.load(open('diabetes_model2.sav', 'rb'))
+# Load the diabetes prediction model
+with open('diabetes_model2.sav', 'rb') as diabetes_model_file:
+    diabetes_model = pickle.load(diabetes_model_file)
 
-heart_model = pickle.load(open('heart_model2.sav', 'rb'))
+# Load the heart disease prediction model
+with open('heart_model2.sav', 'rb') as heart_model_file:
+    heart_model = pickle.load(heart_model_file)
 
 def predict_diabetes(features):
     prediction = diabetes_model.predict(features)
