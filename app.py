@@ -2,10 +2,10 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
+from joblib import load
 
-diabetes_model = pickle.load(open('diabetes_model69.pkl', 'rb'))
-
-heart_model = pickle.load(open('heart_model69.pkl', 'rb'))
+diabetes_model = load('diabetes_model69.pkl')
+heart_model = load('heart_model69.pkl')
 
 def predict_diabetes(features):
     prediction = diabetes_model.predict(features)
