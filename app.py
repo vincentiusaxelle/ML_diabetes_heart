@@ -109,8 +109,6 @@ def main():
     diff_walk_mapping = {'No': 0, 'Yes': 1}
 
     features = np.array([
-        age_mapping[Age],
-        sex_mapping[Sex],
         high_bp_mapping[HighBP],
         high_chol_mapping[HighChol],
         chol_check_mapping[CholCheck],
@@ -126,7 +124,9 @@ def main():
         gen_hlth_mapping[GenHlth],
         MentHlth,
         PhysHlth,
-        diff_walk_mapping[DiffWalk]
+        diff_walk_mapping[DiffWalk],
+        age_mapping[Age],
+        sex_mapping[Sex]
     ]).reshape(1, -1)
     
     if st.button('Check My Health Conditions'):
